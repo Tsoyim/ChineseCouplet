@@ -13,8 +13,12 @@ def couplet_match(s, device='cpu'):
     model_path = './save/best_model.pt'
     model = torch.load(model_path)
     model.to(device)
-    x = [word2idx[word] for word in s]
-
+    # x = [word2idx[word] for word in s]
+    x = []
+    for word in s:
+        if word2idx.get(word) != None:
+            x.append(word2idx[word])
+    if len(x) == 0: return ''
     # 将数值向量转为tensor
     x = torch.from_numpy(np.array(x).reshape(-1, 1))
 
@@ -46,3 +50,4 @@ def execute_function():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
+    # couplet_match('')
