@@ -10,6 +10,15 @@ Transactions of the Association for Computational Linguistics, 2016, 4: 313-327.
 本项目采用LSTM实现春联上联对下联，
 ![img.png](img/img.png)
 
+## 运行环境
+Python3.8 + torch '2.0.0+cu118' + NVIDIA GeForce RTX 3050 4GB Laptop GPU
+
+项目依赖的包在文件[requirements.txt](requirements.txt)中，可通过通过命令：
+```
+pip3 install -r requirement.txt
+```
+安装所需的第三方库
+
 ## 数据集
 
 该数据集包含了超过70万副的中文对联数据。数据集包含4个文件：
